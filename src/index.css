@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+    background-color: #011627;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background-color: #011627;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(203, 206, 60);
+    border-radius: 100vh;
+    border: 5px solid #011627;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #fd0;
+  }
+
+  .scrollbar::-webkit-scrollbar-corner {
+    background-color: #011627;
+  }
+
+  .scrollbar {
+    overflow-x: hidden;
+  }
+
+  body, html, #root {
+    min-width: screen;
+    background-color: #011627;
+  }
+
