@@ -42,7 +42,7 @@ const Loader = () => {
             {progress}%
           </span> */}
           <svg
-            className='w-[30rem] h-[30rem] transform translate-x-1 translate-y-1 absolute'
+            className='w-[30rem] h-[30rem]  transform translate-x-1 translate-y-1 absolute'
             style={{margin: "0 auto"}}
             x-cloak
           >
@@ -113,13 +113,14 @@ const Loader = () => {
               stroke='currentColor'
               fill='transparent'
               r='160'
-              cx='50%'
+              cx={window.innerWidth < 410 ? `40%` : `50%`}
               cy='50%'
             />
             <text
               style={{fontSize: `60px`, pointerEvents: "none"}}
               className='font-firamono cursor-pointer'
-              x='50%'
+              id="glitch"
+              x={window.innerWidth < 410 ? `40%` : `50%`}
               y='53%'
               textAnchor='middle'
               fill='#ced4da'
