@@ -1,9 +1,11 @@
 import React, {useState, useEffect, useContext} from "react";
 import {PairContext} from "../../context/PairContext";
+import { WindowContext } from "../../context/WindowContext";
 import "./Loader.css";
 
 const Loader = () => {
   const {setPairMode} = useContext(PairContext);
+  const {windowSize} = useContext(WindowContext)
 
   const [progress, setProgress] = useState(0);
   const [localStorageValue, setLocalStorageValue] = useState(
@@ -22,6 +24,7 @@ const Loader = () => {
     }
     return () => clearInterval(intervalId);
   }, [progress]);
+
 
   useEffect(() => {
     localStorage.setItem("pairing", JSON.stringify(localStorageValue));
@@ -113,14 +116,14 @@ const Loader = () => {
               stroke='currentColor'
               fill='transparent'
               r='160'
-              cx={window.innerWidth < 410 ? `40%` : `50%`}
+              cx={windowSize.width < 355 ? `35%` : windowSize.width < 410 ? `40%` : `50%`}
               cy='50%'
             />
             <text
               style={{fontSize: `60px`, pointerEvents: "none"}}
               className='font-firamono cursor-pointer'
               id="glitch"
-              x={window.innerWidth < 410 ? `40%` : `50%`}
+              x={windowSize.width < 355 ? `35%` : windowSize.width < 410 ? `40%` : `50%`}
               y='53%'
               textAnchor='middle'
               fill='#ced4da'
